@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Kayıt Ekle</title>
+    </h:head>
+    <h:body>
+        <f:view>
+
+
+            <h:form>  
+                <h:dataTable value="#{adresDefteriController.adresDefteri}" var="item">
+                    <h:column>        
+                        <h:outputLabel value="AdSoyad:" for="adSoyad" />
+                        <br/><br/>
+                        <h:outputLabel value="Telefon:" for="telefon" />
+                        <br/><br/>
+                        <h:outputLabel value="Email:" for="email" />
+                        <br/><br/>
+                        <h:outputLabel value="Adres:" for="adres" />
+                        <br/><br/>
+                        <br/><br/>
+                        <br/><br/>
+                        <br/>
+                    </h:column>
+                    <h:column>
+                        <h:inputText id="adSoyad" value="#{item.adSoyad}" title="AdSoyad"
+                                     required="true" requiredMessage="The AdSoyad field is required."
+                                     validatorMessage="#{item.adSoyad} uygun degil !">
+                            <f:validateRegex pattern="[a-zA-Z\\s]*" /></h:inputText>
+                        <br/><br/><h:inputText maxlength="11" id="telefon" value="#{item.telefon}" title="Telefon"
+                                               required="true" requiredMessage="The Telefon field is required."
+                                               validatorMessage="#{adresDefteriController.adresDefteri.telefon} uygun degil !">
+                            <f:validateRegex pattern="[0-9]*" /></h:inputText>
+                        <br/><br/><h:inputText id="email" value="#{item.email}" title="Email"
+                                               required="true" requiredMessage="The Email field is required."
+                                               validatorMessage="#{adresDefteriController.adresDefteri.email} uygun degil !">
+                            <f:validator validatorId="emailValidator" />
+                        </h:inputText>
+                        <br/><br/><h:inputTextarea id="adres" value="#{item.adres}" title="Adres" required="true" requiredMessage="The Adres field is required."/>
+                        <br/><br/><h:commandButton value="Kaydet" action="#{adresDefteriController.ekle()}"/>
+                        <br/><br/>
+                        <h:button value="Kayıtları Görüntüle" outcome="goruntule.xhtml"></h:button>
+                    </h:column>
+                </h:dataTable>
+
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
+
+
