@@ -11,6 +11,7 @@
 
 
             <h:form>  
+                <f:event type="postAddToView" listener="#{adresDefteriController.inputEkle}" />
                 <h:dataTable value="#{adresDefteriController.adresDefteri}" var="item">
                     <h:column>        
                         <h:outputLabel value="AdSoyad:" for="adSoyad" />
@@ -33,7 +34,10 @@
                         <br/><br/><h:inputText maxlength="11" id="telefon" value="#{item.telefon}" title="Telefon"
                                                required="true" requiredMessage="The Telefon field is required."
                                                validatorMessage="#{adresDefteriController.adresDefteri.telefon} uygun degil !">
-                            <f:validateRegex pattern="[0-9]*" /></h:inputText>
+                            <f:validateRegex pattern="[0-9]*" />
+                            
+                        </h:inputText>
+                        | <h:commandButton value="+" action="#{adresDefteriController.inputEkle}"/>
                         <br/><br/><h:inputText id="email" value="#{item.email}" title="Email"
                                                required="true" requiredMessage="The Email field is required."
                                                validatorMessage="#{adresDefteriController.adresDefteri.email} uygun degil !">

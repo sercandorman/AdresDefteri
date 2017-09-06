@@ -12,10 +12,12 @@ import java.io.Serializable;
 import java.util.*;
 import javax.ejb.EJB;
 import com.sercandorman.entity.*;
-import javax.faces.application.Application;
-import javax.faces.component.html.HtmlInputText;
-import javax.faces.context.FacesContext;
+import com.sun.faces.el.ELUtils;
+import javax.faces.component.UIComponent;
+import javax.faces.component.UIInput;
 import javax.faces.component.html.HtmlForm;
+import javax.faces.component.html.HtmlInputText;
+import javax.faces.event.ComponentSystemEvent;
 
 /**
  *
@@ -25,8 +27,11 @@ import javax.faces.component.html.HtmlForm;
 @SessionScoped
 public class AdresDefteriController implements Serializable {
 
+    int i = 1;
+
     @EJB
     private AdresDefteriFacade adresDefteriFacade;
+    HtmlInputText myhtml = new HtmlInputText();
 
     private AdresDefteri adresDefteri = new AdresDefteri();
 
@@ -65,6 +70,15 @@ public class AdresDefteriController implements Serializable {
         this.adresDefteri = new AdresDefteri();
         return "goruntule?faces-redirect=true";
     }
-    Application application = FacesContext.getCurrentInstance().getApplication();
 
+    public void inputEkle(ComponentSystemEvent event) {
+        UIComponent form = event.getComponent();
+        UIInput input = new HtmlInputText();
+        input.setId("input" + i);
+        String id = "input" + i;
+        input.setValueExpression(id, ELUtils.createValueExpression("#{item.telefon}", String.class));
+        form.getChildren().add(input);
+        i++;
+
+    }
 }
