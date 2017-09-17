@@ -7,12 +7,8 @@
         <title>Düzenle</title>
     </h:head>
     <h:body>
-
-    </h:body><f:view>
-
-
         <h:form>
-            <h1><h:outputText value="Create/Edit"/></h1>
+            <h2><h:outputText value="Düzenle"/></h2>
             <h:panelGrid columns="2">
                 <h:outputLabel value="AdSoyad:" for="adSoyad"/>
                 <h:inputText id="adSoyad" value="#{adresDefteriController.adresDefteri.adSoyad}" title="AdSoyad"
@@ -36,7 +32,6 @@
                 <h:commandButton value="Kaydet" action="#{adresDefteriController.duzenle()}"/>
             </h:panelGrid>
         </h:form>
-    </f:view>
-
+    </h:body>
 </html>
 

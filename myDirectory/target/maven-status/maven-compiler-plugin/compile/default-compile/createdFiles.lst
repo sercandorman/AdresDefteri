@@ -1,4 +1,6 @@
-com\sercandorman\model\AdresDefteriFacade.class
-com\sercandorman\entity\AdresDefteri_.class
-com\sercandorman\model\AbstractFacade.class
-com\sercandorman\entity\AdresDefteri.class
+validator\EmailValidator.class
+entities\AdresDefteri_.class
+controller\AdresDefteriController.class
+entities\AdresDefteri.class
+model\AdresDefteriFacade.class
+model\AbstractFacade.class

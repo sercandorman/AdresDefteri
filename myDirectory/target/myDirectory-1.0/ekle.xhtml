@@ -3,56 +3,68 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <style type="text/css">
+        .myCss{
+            margin-left: 2%;
+            margin-top: 2%;
+            font-family: monospace;
+            font-size: 20px;
+        }
+        .forInput{
+            padding: 2px 2px 2px 2px;
+            margin: 5px 5px 5px 5px;
+        }
+    </style>
     <h:head>
         <title>Kayıt Ekle</title>
     </h:head>
     <h:body>
         <f:view>
+            <h:form styleClass="myCss" id="formum">
+                <!--<f:event type="postAddToView" listener="{adresDefteriController.inputEkle}" />-->
+                <h:panelGrid columns="2" border="0">        
+                    <h:outputLabel value="Ad Soyad:" for="adSoyad" />
+                    <h:inputText styleClass="forInput" id="adSoyad"
+                                 value="#{adresDefteriController.adresDefteri.adSoyad}"
+                                 title="Ad Soyad" required="true"
+                                 requiredMessage="Ad Soyad alanı gereklidir."
+                                 validatorMessage="Bu ad soyad uygun degil !">
+                        <f:validateRegex pattern="^[A-Za-zğüşöçıİĞÜŞÖÇ\s]*[A-Za-zğüşöçıİĞÜŞÖÇ\s]*" />
+                    </h:inputText>
 
-
-            <h:form>  
-                <f:event type="postAddToView" listener="#{adresDefteriController.inputEkle}" />
-                <h:dataTable value="#{adresDefteriController.adresDefteri}" var="item">
-                    <h:column>        
-                        <h:outputLabel value="AdSoyad:" for="adSoyad" />
-                        <br/><br/>
-                        <h:outputLabel value="Telefon:" for="telefon" />
-                        <br/><br/>
-                        <h:outputLabel value="Email:" for="email" />
-                        <br/><br/>
-                        <h:outputLabel value="Adres:" for="adres" />
-                        <br/><br/>
-                        <br/><br/>
-                        <br/><br/>
-                        <br/>
-                    </h:column>
-                    <h:column>
-                        <h:inputText id="adSoyad" value="#{item.adSoyad}" title="AdSoyad"
-                                     required="true" requiredMessage="The AdSoyad field is required."
-                                     validatorMessage="#{item.adSoyad} uygun degil !">
-                            <f:validateRegex pattern="[a-zA-Z\\s]*" /></h:inputText>
-                        <br/><br/><h:inputText maxlength="11" id="telefon" value="#{item.telefon}" title="Telefon"
-                                               required="true" requiredMessage="The Telefon field is required."
-                                               validatorMessage="#{adresDefteriController.adresDefteri.telefon} uygun degil !">
+                    <h:outputLabel value="Telefon:" for="telefon" />
+                    <h:panelGroup>
+                        <h:inputText styleClass="forInput" id="telefon"
+                                     value="#{adresDefteriController.adresDefteri.telefon}"
+                                     maxlength="11" title="Telefon" required="true"
+                                     requiredMessage="Telefon alanı gereklidir."
+                                     validatorMessage="Bu telefon uygun degil !">
                             <f:validateRegex pattern="[0-9]*" />
-                            
-                        </h:inputText>
-                        | <h:commandButton value="+" action="#{adresDefteriController.inputEkle}"/>
-                        <br/><br/><h:inputText id="email" value="#{item.email}" title="Email"
-                                               required="true" requiredMessage="The Email field is required."
-                                               validatorMessage="#{adresDefteriController.adresDefteri.email} uygun degil !">
-                            <f:validator validatorId="emailValidator" />
-                        </h:inputText>
-                        <br/><br/><h:inputTextarea id="adres" value="#{item.adres}" title="Adres" required="true" requiredMessage="The Adres field is required."/>
-                        <br/><br/><h:commandButton value="Kaydet" action="#{adresDefteriController.ekle()}"/>
-                        <br/><br/>
-                        <h:button value="Kayıtları Görüntüle" outcome="goruntule.xhtml"></h:button>
-                    </h:column>
-                </h:dataTable>
+                        </h:inputText> <h:commandButton value="+"/>
+                    </h:panelGroup>
 
+                    <h:outputLabel value="Email:" for="email" />
+                    <h:inputText styleClass="forInput" id="email" value="#{adresDefteriController.adresDefteri.email}"
+                                 title="Email" required="true"
+                                 requiredMessage="Email alanı gereklidir."
+                                 validatorMessage="Bu mail uygun degil !">
+                        <f:validator validatorId="emailValidator"/>
+                    </h:inputText>
+
+                    <h:outputLabel value="Adres:" for="adres" />
+                    <h:inputTextarea styleClass="forInput" id="adres" value="#{adresDefteriController.adresDefteri.adres}"
+                                     title="Adres" required="true"
+                                     requiredMessage="Adres alanı gereklidir."/>
+                </h:panelGrid> 
+                <h:commandButton style="margin-top: 10px" value="Kaydet"
+                                 action="#{adresDefteriController.ekle()}"/>
+                | <h:commandButton value="Temizle">
+                    <f:ajax render="formum" resetValues="true"/>
+                </h:commandButton>
+                | <h:button value="Ana Menü"
+                            outcome="index?faces-redirect=true"/>
             </h:form>
         </f:view>
-
     </h:body>
 </html>
 

@@ -1,5 +1,5 @@
-C:\Users\SercanDorman\Documents\NetBeansProjects\myDirectory\AdresDefteri\myDirectory\src\main\java\com\sercandorman\entity\AdresDefteri.java
-C:\Users\SercanDorman\Documents\NetBeansProjects\myDirectory\AdresDefteri\myDirectory\src\main\java\com\sercandorman\directory\EmailValidator.java
-C:\Users\SercanDorman\Documents\NetBeansProjects\myDirectory\AdresDefteri\myDirectory\src\main\java\com\sercandorman\model\AbstractFacade.java
-C:\Users\SercanDorman\Documents\NetBeansProjects\myDirectory\AdresDefteri\myDirectory\src\main\java\com\sercandorman\model\AdresDefteriFacade.java
-C:\Users\SercanDorman\Documents\NetBeansProjects\myDirectory\AdresDefteri\myDirectory\src\main\java\com\sercandorman\controller\AdresDefteriController.java
+C:\Users\SercanDorman\Documents\NetBeansProjects\myDirectory\src\main\java\validator\EmailValidator.java
+C:\Users\SercanDorman\Documents\NetBeansProjects\myDirectory\src\main\java\model\AdresDefteriFacade.java
+C:\Users\SercanDorman\Documents\NetBeansProjects\myDirectory\src\main\java\model\AbstractFacade.java
+C:\Users\SercanDorman\Documents\NetBeansProjects\myDirectory\src\main\java\controller\AdresDefteriController.java
+C:\Users\SercanDorman\Documents\NetBeansProjects\myDirectory\src\main\java\entities\AdresDefteri.java

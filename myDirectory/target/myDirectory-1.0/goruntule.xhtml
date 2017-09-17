@@ -4,39 +4,40 @@
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <style type="text/css">
+        .myCss{
+            margin-left: 2%;
+            margin-top: 2%;
+            font-family: monospace;
+            font-size: 20px;
+        }
+    </style>
     <h:head>
         <title>Adres Defterim</title>
     </h:head>
     <h:body>
-        <h:form>
-            <h:link value="Yeni Kayit Ekle" outcome="ekle.xhtml"/>
-            <br/>
+        <h:form styleClass="myCss">
             <h:dataTable var="adc" value="#{adresDefteriController.findAll()}"
-                         border="1" cellpadding="2" cellspacing="2">
+                         border="0" cellpadding="10px" cellspacing="5px">
                 <h:column>
-                    <f:facet name="header">Ad Soyad</f:facet>
-                    <h:outputText value="#{adc.adSoyad}"></h:outputText>
+                    <f:facet name="header"><div align="left">Ad Soyad</div></f:facet>
+                    <h:outputText style="margin-right: 20px" value="#{adc.adSoyad}"/>
                 </h:column>
                 <h:column>
-                    <f:facet name="header">Telefon</f:facet>
-                    <h:outputText value="#{adc.telefon}"></h:outputText>
+                    <f:facet name="header"><div align="left">Adres</div></f:facet>
+                    <h:outputText  style="margin-right: 50px" value="#{adc.adres}"/>
                 </h:column>
                 <h:column>
-                    <f:facet name="header">Email</f:facet>
-                    <h:outputText value="#{adc.email}"></h:outputText>
-                </h:column>
-                <h:column>
-                    <f:facet name="header">Adres</f:facet>
-                    <h:outputText value="#{adc.adres}"></h:outputText>
-                </h:column>
-                <h:column>
-                    <f:facet name="header">Option</f:facet>
+                    <f:facet name="header">Secenek</f:facet>
                     <h:commandLink value="Sil" action="#{adresDefteriController.sil(adc)}"
                                    onclick="return confirm('Silmek istediğinizden emin misiniz ?')"/>
                     |
                     <h:commandLink value="Düzenle" action="#{adresDefteriController.duzenle(adc)}"/>
+                    |
+                    <h:commandLink value="Detay" action="#{adresDefteriController.detay(adc)}"/>
                 </h:column>
             </h:dataTable>
+            <h:commandButton style="margin-left: 1%; margin-top: 1%" value="Ana Menü" action="index?faces-redirect=true"/>
         </h:form>
     </h:body>
 </html>
