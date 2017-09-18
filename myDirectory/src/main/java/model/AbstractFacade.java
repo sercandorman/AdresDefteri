@@ -17,6 +17,7 @@ import entities.AdresDefteri;
 /**
  *
  * @author SercanDorman
+ * @param <T>
  */
 public abstract class AbstractFacade<T> {
 
@@ -50,15 +51,15 @@ public abstract class AbstractFacade<T> {
         return getEntityManager().createQuery(cq).getResultList();
     }
 
-    public List<T> findByName() {
+    public List<T> findByName(){
         HttpServletRequest request = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
-        String value = request.getParameter("formIndex:araText");
 
+        
         EntityManagerFactory entityManagerFactoryObject = Persistence.createEntityManagerFactory("com.sercandorman_myDirectory_war_1.0PU");
         EntityManager entityManagerObject = entityManagerFactoryObject.createEntityManager();
 
-        TypedQuery<T> query = (TypedQuery<T>) entityManagerObject.createNamedQuery("AdresDefteri.findByAdSoyad", AdresDefteri.class);
-        query.setParameter("adSoyad", value);
+        TypedQuery<T> query = (TypedQuery<T>) entityManagerObject.createNamedQuery("findByAdSoyad", AdresDefteri.class);
+        query.setParameter("adSoyad", AdresDefteri.srch);
         List<T> liste = (List<T>) query.getResultList();
 
         entityManagerObject.close();

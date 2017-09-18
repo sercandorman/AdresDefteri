@@ -27,12 +27,12 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "table_adresdefteri")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "AdresDefteri.findAll", query = "SELECT t FROM AdresDefteri t")
-    , @NamedQuery(name = "AdresDefteri.findByAdSoyad", query = "SELECT t FROM AdresDefteri t WHERE t.adSoyad = :adSoyad")
-    , @NamedQuery(name = "AdresDefteri.findByTelefon", query = "SELECT t FROM AdresDefteri t WHERE t.telefon = :telefon")
-    , @NamedQuery(name = "AdresDefteri.findByEmail", query = "SELECT t FROM AdresDefteri t WHERE t.email = :email")
-    , @NamedQuery(name = "AdresDefteri.findByAdres", query = "SELECT t FROM AdresDefteri t WHERE t.adres = :adres")
-    , @NamedQuery(name = "AdresDefteri.findByKayitId", query = "SELECT t FROM AdresDefteri t WHERE t.kayitId = :kayitId")})
+    @NamedQuery(name = "findAll", query = "SELECT t FROM AdresDefteri t")
+    , @NamedQuery(name = "findByAdSoyad", query = "SELECT t FROM AdresDefteri t WHERE t.adSoyad = :adSoyad")
+    , @NamedQuery(name = "findByTelefon", query = "SELECT t FROM AdresDefteri t WHERE t.telefon = :telefon")
+    , @NamedQuery(name = "findByEmail", query = "SELECT t FROM AdresDefteri t WHERE t.email = :email")
+    , @NamedQuery(name = "findByAdres", query = "SELECT t FROM AdresDefteri t WHERE t.adres = :adres")
+    , @NamedQuery(name = "findByKayitId", query = "SELECT t FROM AdresDefteri t WHERE t.kayitId = :kayitId")})
 public class AdresDefteri implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -62,6 +62,8 @@ public class AdresDefteri implements Serializable {
     @Basic(optional = false)
     @Column(name = "KAYIT_ID")
     private Short kayitId;
+    
+    public static String srch;
 
     public AdresDefteri() {
     }
@@ -78,6 +80,14 @@ public class AdresDefteri implements Serializable {
         this.adres = adres;
     }
 
+        public String getSrch() {
+        return srch;
+    }
+
+    public void setSrch(String srch) {
+        this.srch = srch;
+    }
+    
     public String getAdSoyad() {
         return adSoyad;
     }
