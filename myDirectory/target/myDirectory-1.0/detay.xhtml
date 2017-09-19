@@ -2,31 +2,38 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
+
     <h:head>
-        <title>Düzenle</title>
+        <title>Detaylar</title>
     </h:head>
     <h:body>
-        <h:form>
-            <h2><h:outputText value="Detaylar"/></h2>
-            <h:panelGrid columns="2">
+        <h:outputStylesheet library="css" name="styles.css"  />
+        <h:form class="forForm">
+            <h3><h:outputText class="forHeaders" value="Detaylar"/></h3>
+            <h:panelGrid columns="2" cellpadding="10px" cellspacing="5px">
                 <h:outputLabel value="Ad Soyad :" for="adSoyad"/>
-                <h:outputText id="adSoyad" value="#{adresDefteriController.adresDefteri.adSoyad}" title="AdSoyad"/>
+                <h:outputText style="font-weight: normal" id="adSoyad" value="#{adresDefteriController.adresDefteri.adSoyad}" title="AdSoyad"/>
 
                 <h:outputLabel value="Telefon :" for="telefon" />
-                <h:outputText id="telefon" value="#{adresDefteriController.adresDefteri.telefon}" title="Telefon"/>
+                <h:outputText style="font-weight: normal" id="telefon" value="#{adresDefteriController.adresDefteri.telefon}" title="Telefon"/>
 
                 <h:outputLabel value="Email :" for="email" />
-                <h:outputText id="email" value="#{adresDefteriController.adresDefteri.email}" title="Email"/>
+                <h:outputText style="font-weight: normal" id="email" value="#{adresDefteriController.adresDefteri.email}" title="Email"/>
 
                 <h:outputLabel value="Adres :" for="adres" />
-                <h:outputText id="adres" value="#{adresDefteriController.adresDefteri.adres}" title="Adres"/>
+                <h:outputText style="font-weight: normal" id="adres" value="#{adresDefteriController.adresDefteri.adres}" title="Adres"/>
 
                 <h:outputLabel value="Kayıt ID:" for="kayitId" />
-                <h:outputText id="kayitId" value="#{adresDefteriController.adresDefteri.kayitId}" title="KayitId"/>
+                <h:outputText style="font-weight: normal" id="kayitId" value="#{adresDefteriController.adresDefteri.kayitId}" title="KayitId"/>
 
-                <h:commandButton value="Geri" action="goruntule?faces-redirect=true"/>
-                <h:commandButton value="Ana Menü" action="index?faces-redirect=true"/>
-
+                <div/>
+                <h:panelGroup>
+                    <h:commandButton style="padding: 2px 24px" class="forButton"
+                                     value="Geri" action="goruntule?faces-redirect=true"/>
+                    <h:commandButton class="forButton" value="Ana Menü"
+                                     action="#{adresDefteriController.anaMenu()}"/>
+                </h:panelGroup>
+                
             </h:panelGrid>
         </h:form>
     </h:body>

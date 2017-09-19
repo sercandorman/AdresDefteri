@@ -8,14 +8,23 @@
     </h:head>
     <h:body>
         <f:view>
-            <h:form id="indexForm">
-                <h2 style="font-size: 30px ;margin-left: 10%; color: blueviolet; font-family: monospace">Adres Defterim</h2>
-                <h:commandButton style="margin-left: 10%; margin-top: 10px; margin-bottom: 10px"
-                                 value="Yeni Kayıt" action="ekle?faces-redirect=true"/><br/>
-                <h:commandButton style="margin-left: 10%; margin-top: 10px; margin-bottom: 10px"
-                                 value="Kişiler ve Adresleri" action="goruntule?faces-redirect=true"/><br/>
-                <h:inputText value="#{adresDefteriController.adresDefteri.srch}" style="margin-left: 10%; margin-top: 10px; margin-bottom: 10px"/>
-                &larr; <h:commandButton value="İsme Göre Ara" action="ara?faces-redirect=true"/><br/>
+            <h:outputStylesheet library="css" name="styles.css"  />
+            <h:form id="indexForm" class="forForm">
+                
+                <h3 class="forHeaders">Adres Defterim</h3>
+                
+                <h:commandButton class="forButton"
+                                 value="Yeni Kayıt"
+                                 action="ekle?faces-redirect=true"/><br/>
+                
+                <h:commandButton class="forButton"
+                                 value="Kişiler ve Adresleri"
+                                 action="goruntule?faces-redirect=true"/>
+                <br/>
+                <h:inputText class="forInput" style="margin-top: 14px;"
+                    value="#{adresDefteriController.adresDefteri.srch}"/>
+                &larr; <h:commandButton class="forButton" value="İsme Göre Ara"
+                                        action="ara?faces-redirect=true"/>
             </h:form>
         </f:view>
     </h:body>

@@ -55,6 +55,11 @@ public class AdresDefteriController implements Serializable {
         return "goruntule?faces-redirect=true";
     }
 
+    public String anaMenu() {
+        this.adresDefteri = new AdresDefteri();
+        return "index?faces-redirect=true";
+    }
+
     public void sil(AdresDefteri ad) {
         this.adresDefteriFacade.remove(ad);
     }
@@ -63,7 +68,7 @@ public class AdresDefteriController implements Serializable {
         this.adresDefteri = ad;
         return "duzenle.xhtml?faces-redirect=true";
     }
-    
+
     public String detay(AdresDefteri ad) {
         this.adresDefteri = ad;
         return "detay.xhtml?faces-redirect=true";
@@ -84,6 +89,6 @@ public class AdresDefteriController implements Serializable {
         input.setValueExpression(id, ELUtils.createValueExpression("#{adresDefteri.telefon}", String.class));
         form.getChildren().add(input);
         i++;
-    }  
-    
+    }
+
 }

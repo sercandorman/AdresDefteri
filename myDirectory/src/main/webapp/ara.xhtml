@@ -4,44 +4,54 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Arama Sonuçları</title>
     </h:head>
     <h:body>
         <f:view>
-            <h:form>
-                <h1><h:outputText value="Sonuç"/></h1>
-                <h:dataTable value="#{adresDefteriController.findByName()}" var="item">
+            <h:outputStylesheet library="css" name="styles.css"  />
+            <h:form class="forForm">
+                <h3><h:outputText class="forHeaders" value="Sonuçlar"/></h3>
+                
+                <h:dataTable value="#{adresDefteriController.findByName()}"
+                             var="item" cellpadding="10px" cellspacing="5px">
                     <h:column>
                         <f:facet name="header">
-                            <h:outputText value="AdSoyad"/>
+                            <div class="forHeaders">Ad Soyad</div>
                         </f:facet>
-                        <h:outputText value="#{item.getAdSoyad()}"/>
+                        <h:outputText value="#{item.adSoyad}"/>
                     </h:column>
+                    
                     <h:column>
                         <f:facet name="header">
-                            <h:outputText value="Telefon"/>
+                            <div class="forHeaders">Telefon</div>
                         </f:facet>
                         <h:outputText value="#{item.telefon}"/>
                     </h:column>
+                    
                     <h:column>
                         <f:facet name="header">
-                            <h:outputText value="Email"/>
+                            <div class="forHeaders">E-mail</div>
                         </f:facet>
                         <h:outputText value="#{item.email}"/>
                     </h:column>
+                    
                     <h:column>
                         <f:facet name="header">
-                            <h:outputText value="Adres"/>
+                            <div class="forHeaders">Adres</div>
                         </f:facet>
                         <h:outputText value="#{item.adres}"/>
                     </h:column>
+                    
                     <h:column>
                         <f:facet name="header">
-                            <h:outputText value="KayitId"/>
+                            <div class="forHeaders">Kayıt ID</div>
                         </f:facet>
                         <h:outputText value="#{item.kayitId}"/>
-                    </h:column>
+                    </h:column>   
                 </h:dataTable>
+                
+                <h:commandButton class="forButton" style="margin-left: 10px"
+                                 value="Ana Menü" action="index?faces-redirect=true"/>
             </h:form>
         </f:view>
     </h:body>

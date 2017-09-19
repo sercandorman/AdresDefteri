@@ -1,0 +1,14 @@
+.myForm{
+    margin-left: 2%;
+    margin-top: 2%;
+    font-family: monospace;
+    font-size: 20px;
+}
+.forButton{
+    color:#529214;
+    font-weight: 600
+}
+.forInput{
+    padding: 2px 2px 2px 2px;
+    margin: 5px 5px 5px 5px;
+}    

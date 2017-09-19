@@ -7,29 +7,58 @@
         <title>Düzenle</title>
     </h:head>
     <h:body>
-        <h:form>
-            <h2><h:outputText value="Düzenle"/></h2>
+        <h:outputStylesheet library="css" name="styles.css"  />
+        <h:form class="forForm">
+            <h2><h:outputText class="forHeaders" value="Düzenle"/></h2>
+
             <h:panelGrid columns="2">
-                <h:outputLabel value="AdSoyad:" for="adSoyad"/>
-                <h:inputText id="adSoyad" value="#{adresDefteriController.adresDefteri.adSoyad}" title="AdSoyad"
-                             required="true" requiredMessage="The AdSoyad field is required."
-                             validatorMessage="#{adresDefteriController.adresDefteri.adSoyad} uygun degil !">
-                    <f:validateRegex pattern="[a-zA-Z\\s]*" /></h:inputText>
+                <h:outputLabel value="Ad Soyad:" for="adSoyad"/>
+                <h:inputText id="adSoyad" class="forInput"
+                             value="#{adresDefteriController.adresDefteri.adSoyad}"
+                             title="Ad Soyad" required="true"
+                             requiredMessage="Ad Soyad alanı gereklidir."
+                             validatorMessage="Bu ad soyad uygun degil !">
+                    <f:validateRegex pattern="^[A-Za-zğüşöçıİĞÜŞÖÇ\s]*[A-Za-zğüşöçıİĞÜŞÖÇ\s]*" />
+                </h:inputText>
+
                 <h:outputLabel value="Telefon:" for="telefon" />
-                <h:inputText maxlength="11" id="telefon" value="#{adresDefteriController.adresDefteri.telefon}" title="Telefon"
-                             required="true" requiredMessage="The Telefon field is required."
-                             validatorMessage="#{adresDefteriController.adresDefteri.telefon} uygun degil !">
-                    <f:validateRegex pattern="[0-9]*" /></h:inputText>
+                <h:inputText class="forInput" id="telefon"
+                             value="#{adresDefteriController.adresDefteri.telefon}"
+                             maxlength="11" title="Telefon" required="true"
+                             requiredMessage="Telefon alanı gereklidir."
+                             validatorMessage="Bu telefon uygun degil !">
+                    <f:validateRegex pattern="[0-9]*" />
+                </h:inputText>
+
                 <h:outputLabel value="Email:" for="email" />
-                <h:inputText id="email" value="#{adresDefteriController.adresDefteri.email}" title="Email"
-                             required="true" requiredMessage="The Email field is required."
-                             validatorMessage="#{adresDefteriController.adresDefteri.email} uygun degil !">
-                    <f:validator validatorId="emailValidator" /></h:inputText>
+                <h:inputText class="forInput" id="email"
+                             value="#{adresDefteriController.adresDefteri.email}"
+                             title="Email" required="true"
+                             requiredMessage="Email alanı gereklidir."
+                             validatorMessage="Bu mail uygun degil !">
+                    <f:validator validatorId="emailValidator"/>
+                </h:inputText>
+
                 <h:outputLabel value="Adres:" for="adres" />
-                <h:inputTextarea id="adres" value="#{adresDefteriController.adresDefteri.adres}" title="Adres" required="true" requiredMessage="The Adres field is required."/>
-                <h:outputLabel value="KayitId:" for="kayitId" />
-                <h:inputText readonly="true" id="kayitId" value="#{adresDefteriController.adresDefteri.kayitId}" title="KayitId"/>
-                <h:commandButton value="Kaydet" action="#{adresDefteriController.duzenle()}"/>
+                <h:inputTextarea class="forInput" id="adres"
+                                 value="#{adresDefteriController.adresDefteri.adres}"
+                                 title="Adres" required="true"
+                                 requiredMessage="Adres alanı gereklidir."/>
+
+                <h:outputLabel value="Kayıt ID:" for="kayitId" />
+                <h:inputText readonly="true" id="kayitId" class="forInput"
+                             value="#{adresDefteriController.adresDefteri.kayitId}"
+                             title="KayitId"/>
+
+                <div/>
+                <h:panelGroup>
+                    <h:commandButton style="padding: 2px 24px" class="forButton"
+                                     value="Geri" action="goruntule?faces-redirect=true"/>
+                    <h:commandButton class="forButton" value="Ana Menü"
+                                     action="#{adresDefteriController.anaMenu()}"/>
+                    <h:commandButton class="forButton" style="margin-left: 10px; padding: 2px 14px"
+                                     value="Kaydet" action="#{adresDefteriController.duzenle()}"/>
+                </h:panelGroup>
             </h:panelGrid>
         </h:form>
     </h:body>

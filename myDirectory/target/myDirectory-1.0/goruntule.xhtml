@@ -4,41 +4,40 @@
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
-    <style type="text/css">
-        .myCss{
-            margin-left: 2%;
-            margin-top: 2%;
-            font-family: monospace;
-            font-size: 20px;
-        }
-    </style>
+
     <h:head>
         <title>Adres Defterim</title>
     </h:head>
     <h:body>
-        
-        <h:form styleClass="myCss">
-            <h:dataTable var="adc" value="#{adresDefteriController.findAll()}"
+        <h:outputStylesheet library="css" name="styles.css"  />
+        <h:form class="forForm">
+            <h:dataTable var="item" value="#{adresDefteriController.findAll()}"
                          border="0" cellpadding="10px" cellspacing="5px">
+                
                 <h:column>
-                    <f:facet name="header"><div align="left">Ad Soyad</div></f:facet>
-                    <h:outputText style="margin-right: 20px" value="#{adc.adSoyad}"/>
+                    <f:facet name="header"><div class="forHeaders">Ad Soyad</div></f:facet>
+                    <h:outputText style="margin-right: 20px" value="#{item.adSoyad}"/>
                 </h:column>
+                
                 <h:column>
-                    <f:facet name="header"><div align="left">Adres</div></f:facet>
-                    <h:outputText  style="margin-right: 50px" value="#{adc.adres}"/>
+                    <f:facet name="header"><div class="forHeaders">Adres</div></f:facet>
+                    <h:outputText  style="margin-right: 50px" value="#{item.adres}"/>
                 </h:column>
+                
                 <h:column>
-                    <f:facet name="header">Secenek</f:facet>
-                    <h:commandLink value="Sil" action="#{adresDefteriController.sil(adc)}"
+                    <f:facet name="header"><div class="forHeaders" style="text-align: center">Secenek</div></f:facet>
+                    <h:commandLink value="Sil" action="#{adresDefteriController.sil(item)}"
                                    onclick="return confirm('Silmek istediğinizden emin misiniz ?')"/>
                     |
-                    <h:commandLink value="Düzenle" action="#{adresDefteriController.duzenle(adc)}"/>
+                    <h:commandLink value="Düzenle" action="#{adresDefteriController.duzenle(item)}"/>
                     |
-                    <h:commandLink value="Detay" action="#{adresDefteriController.detay(adc)}"/>
+                    <h:commandLink value="Detay" action="#{adresDefteriController.detay(item)}"/>
                 </h:column>
+                
             </h:dataTable>
-            <h:commandButton style="margin-left: 1%; margin-top: 1%" value="Ana Menü" action="index?faces-redirect=true"/>
+            
+            <h:button value="Ana Menü" class="forButton"
+                      outcome="index?faces-redirect=true"/>
         </h:form>
     </h:body>
 </html>
