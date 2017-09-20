@@ -16,8 +16,8 @@ Bu projede;
 
 kullanılmıştır.
 
-  Bu projeyi NetBeans 8.2 IDE kullanılarak tasarlandım. Bunun sebebi kullanıcı dostu bir IDE olduğuna inanmam ve kullanmayı en iyi bildiğim IDE olmasıdır. Bu yüzden projeyi çalıştırmak için anlatacağım adımlarda NetBeans'i referans alacağım.
-Veritabanı olarak MySQL kullandım. Son derece geniş kaynaklara, kolay kurulum ve kolay kullanıma sahiptir. Bunların yanında özellikle küçük çaplı projeler için yeterince güçlü olduğuna inanıyorum.
+  Bu projeyi NetBeans 8.2 IDE kullanılarak tasarlandım. Bunun sebebi kullanıcı dostu bir IDE olduğuna inanmam ve kullanmayı en iyi bildiğim IDE olmasıdır.
+  Veritabanı olarak MySQL kullandım. Son derece geniş kaynaklara, kolay kurulum ve kolay kullanıma sahiptir. Bunların yanında özellikle küçük çaplı projeler için yeterince güçlü olduğuna inanıyorum.
 
 ### Projenin Kurulumu ve Nasıl Çalışır Hale Geleceği
 
