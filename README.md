@@ -1,37 +1,52 @@
-## Welcome to Adres Defteri
+# Adres Defteri
 
-You can use the [editor on GitHub](https://github.com/sercandorman/AdresDefteri/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## Ön Yazı
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Bu projede;
 
-### Markdown
+> Web arayüzü olarak `JSF/CSS`
+  
+> Nesnelerin veritabanıyla ilişkilendirilmesi için `JPA`
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+> Kütüphane bağımlılıkları için `Maven`
 
-```markdown
-Syntax highlighted code block
+> Veritabanı olarak `MySQL`
 
-# Header 1
-## Header 2
-### Header 3
+> Uygulama sunucusu olarak `GlassFish`
 
-- Bulleted
-- List
+kullanılmıştır.
 
-1. Numbered
-2. List
+  Bu projeyi NetBeans 8.2 IDE kullanılarak tasarlandım. Bunun sebebi kullanıcı dostu bir IDE olduğuna inanmam ve kullanmayı en iyi bildiğim IDE olmasıdır. Bu yüzden projeyi çalıştırmak için anlatacağım adımlarda NetBeans'i referans alacağım.
+Veritabanı olarak MySQL kullandım. Son derece geniş kaynaklara, kolay kurulum ve kolay kullanıma sahiptir. Bunların yanında özellikle küçük çaplı projeler için yeterince güçlü olduğuna inanıyorum.
 
-**Bold** and _Italic_ and `Code` text
+### Projenin Kurulumu ve Nasıl Çalışır Hale Geleceği
 
-[Link](url) and ![Image](src)
-```
+> Öncelikle gerekli programlar;
+* GlassFish v4
+    * Adresinden indirin. ( https://javaee.github.io/glassfish/download )
+    * Zip'ten çıkarın. Kurulum tamamlanmış oldu.
+* WampServer 
+    * Adresinden indirin. ( http://www.wampserver.com/en/ )
+    * Kurun. ( https://www.youtube.com/watch?v=Tn9DgwRQVRs )
+* Ve tabi ki projemiz.
+    * https://github.com/sercandorman/AdresDefteri adresinden download zip ile indirip, dizini çıkarın.
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+1. GlassFish'i başlatın.
+    * cmd çalıştırıp glassfish4 klasörünün içindeki bin klasörüne kadar gidin. (Ör: cd ~/glassfish4/bin)
+    * `asadmin start-domain` yazıp girin ve sunucunun başlamasını bekleyin. Başladıktan sonra cmd açık kalsın. :hand:
+2. WampServer'ı başlatın.
+    * Sağ alttaki simgesinden Start All Services yapmanız yeterli olmalıdır.
+3. GlassFish ile projeyi deploy edin. ( Türkçe karşılığını bilmiyorum :) )
+    * Açık bıraktığımız cmd'den devam edelim. Öncelikle Projemizin target klasörünün içindeki war uzantılı dosyayı deploy edeceğimizi 
+    bilelim. Bu yüzden `asadmin deploy ~/AdresDefteri/target/myDirectory-1.0.war` yazıp girdikten sonra başarıyla deploy edildiğini 
+    görmeliyiz. ( Kaynak : https://www.youtube.com/watch?v=rdft-BpN_t4 )
+    
+    
+> Projemizi indirip sunucularımızı kurduğumuza göre projemiz çalışmaya hazır.
+  Tarayıcıyı açıp `localhost:8080/AdresDefteri/index.xhtml` yazdıktan sonra projemiz kullanmaya hazır.
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/sercandorman/AdresDefteri/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+**İyi Çalışmalar** :blush:
+    `
+    
+    
+    
