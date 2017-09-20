@@ -37,13 +37,13 @@ kullanılmıştır.
 2. WampServer'ı başlatın.
     * Sağ alttaki simgesinden Start All Services yapmanız yeterli olmalıdır.
 3. GlassFish ile projeyi deploy edin. ( Türkçe karşılığını bilmiyorum :) )
-    * Açık bıraktığımız cmd'den devam edelim. Öncelikle Projemizin target klasörünün içindeki war uzantılı dosyayı deploy edeceğimizi 
+    * Açık bıraktığımız cmd'den devam edelim. Öncelikle projemizin target klasörünün içindeki war uzantılı dosyayı deploy edeceğimizi 
     bilelim. Bu yüzden `asadmin deploy ~/AdresDefteri/target/myDirectory-1.0.war` yazıp girdikten sonra başarıyla deploy edildiğini 
     görmeliyiz. ( Kaynak : https://www.youtube.com/watch?v=rdft-BpN_t4 )
     
     
 > Projemizi indirip sunucularımızı kurduğumuza göre projemiz çalışmaya hazır.
-  Tarayıcıyı açıp `localhost:8080/AdresDefteri/index.xhtml` yazdıktan sonra projemiz kullanmaya hazır.
+  Tarayıcıyı açıp `localhost:8080/AdresDefteri/index.xhtml` yazdıktan sonra projemizi kullanabiliriz.
 
 **İyi Çalışmalar** :blush:
     `
