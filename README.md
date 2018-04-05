@@ -1,6 +1,5 @@
 # Adres Defteri
 
-## Ön Yazı
 
 Bu projede;
 
